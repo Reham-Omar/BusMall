@@ -43,18 +43,23 @@ function pickRandomImages() {
   rightImage.setAttribute('src', rightImageRandom.urlImage);
   rightImage.setAttribute('alt', rightImageRandom.name);
 
-  while (leftImage === centerImage) {
+  while (leftImage === centerImage ||  rightImage === centerImage ||leftImage===rightImage ) {
   leftImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
- 
+   centerImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
+   rightImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
+
+  
   leftImage.setAttribute('src', leftImageRandom.urlImage);
   leftImage.setAttribute('alt', leftImageRandom.name);
-    //pick another random number
+    //pick another random 
+    centerImage.setAttribute('src', centerImageRandom.urlImage);
+  centerImage.setAttribute('alt', centerImageRandom.name);
+
+  rightImage.setAttribute('src', rightImageRandom.urlImage);
+  rightImage.setAttribute('alt', rightImageRandom.name);
+    
   }
-  while (leftImage === centerImage || rightImage === centerImage) {
-    rightImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
-    rightImage.setAttribute('src', rightImageRandom.urlImage);
-    rightImage.setAttribute('alt', rightImageRandom.name);
-  }
+  
 
 }
 function clickImage(event) {
@@ -62,6 +67,7 @@ function clickImage(event) {
     pickRandomImages();
     totalClicks++;
   }
+  console.log();
   if (totalClicks === 25) {
     //remove event listener
     Busmall.removeEventListener('click', clickImage);
