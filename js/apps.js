@@ -24,7 +24,9 @@ function Busmall(name) {
 for (var i = 0; i < busmallobjectsImages.length; i++) {
   new Busmall(busmallobjectsImages[i]);//we pass the name of the busmall from the array
 }
+groupImageSection.addEventListener('click', clickImage);
 pickRandomImages();
+clickImage();
 
 function pickRandomImages() {
   var leftImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
@@ -32,10 +34,6 @@ function pickRandomImages() {
   var rightImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
 
   
-  // console.log(leftImageRandom);
-  // console.log(centerImageRandom);
-  // console.log(rightImageRandom);
-
   leftImage.setAttribute('src', leftImageRandom.urlImage);
   leftImage.setAttribute('alt', leftImageRandom.name);
 
@@ -47,12 +45,15 @@ function pickRandomImages() {
 
   while (leftImage === centerImage) {
   leftImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
-
+ 
+  leftImage.setAttribute('src', leftImageRandom.urlImage);
+  leftImage.setAttribute('alt', leftImageRandom.name);
     //pick another random number
   }
   while (leftImage === centerImage || rightImage === centerImage) {
     rightImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
-
+    rightImage.setAttribute('src', rightImageRandom.urlImage);
+    rightImage.setAttribute('alt', rightImageRandom.name);
   }
 
 }
@@ -67,5 +68,4 @@ function clickImage(event) {
   }
 }
 
-groupImageSection.addEventListener('click', clickImage);
 

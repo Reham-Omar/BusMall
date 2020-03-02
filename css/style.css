@@ -70,12 +70,12 @@ body {
   }
    img {
     height: 252px;
-    width: 339px;
-    padding: 12px;
-    margin: 48px 95px;
     border: 1px solid #fefffe;
     box-shadow: 2px 0 12px #043817;
     display: inline-block;
+    width: 229px;
+    padding: 6px;
+    margin: 48px 53px;
 
   }
 
