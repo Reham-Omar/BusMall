@@ -1,0 +1,95 @@
+
+body {
+    background: radial-gradient(#dbffe1, #fff) fixed;
+    color: #0e2805;
+  }
+  h1{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  h2{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 44px;
+  }
+  header {
+    background: #c3f3cb;
+    width: 100%;
+    padding: 17px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+  
+  main{
+    max-width: 950px;
+    margin: 40px auto;
+    overflow: hidden;
+  }
+  
+  main > *{
+    float:left;
+  }
+  
+  main > :nth-child(odd){
+    width:20%
+  }
+  
+  main > :nth-child(2){
+    width: 50%;
+  }
+  
+  main ul, main li {
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  aside{ 
+    padding-left: 30px;
+  }
+  #goat-clicks {
+    padding: 26px 9px 0 0;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  
+  img {
+    max-height: 300px;
+    max-width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  #all_pic {
+    text-align: center;
+  }
+  div{
+      display: inline;
+  }
+   img {
+    height: 252px;
+    width: 339px;
+    padding: 12px;
+    margin: 48px 95px;
+    border: 1px solid #fefffe;
+    box-shadow: 2px 0 12px #043817;
+    display: inline-block;
+
+  }
+
+  
+  body footer {
+    background: #18ad3155;
+    clear: both;
+    text-align: center;
+    padding: 24px 0;
+    color: #0e2805;
+  }
+  section div {
+    padding: 7px;
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+  }
