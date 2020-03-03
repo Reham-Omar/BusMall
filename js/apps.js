@@ -108,7 +108,7 @@ function chartResult() {
     productName.push(nameOfProduct);
     var objectclick = busmallobjects[i].clickTime;
     clickobject.push(objectclick);
-    var viewsnumber = busmallobjects[i].name;
+    var viewsnumber = busmallobjects[i].view;
     viewsArr.push(viewsnumber);
   }
 
@@ -131,7 +131,7 @@ function chartResult() {
           labels: viewsArr,
           label: '# of views',
           data: viewsArr,
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          backgroundColor: 'rgba(100, 69, 100, 0.2)',
           borderColor: 'rgba(255, 99, 132, 1)',
           borderWidth: 1
 

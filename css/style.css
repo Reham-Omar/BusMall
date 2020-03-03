@@ -91,6 +91,6 @@ body {
 
   element.style {
     display: block;
-    height: 821px;
-    width: 1014px;
+    height: 821px !important ;
+    width: 1014px !important;
 }
