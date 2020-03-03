@@ -79,6 +79,10 @@ body {
 
   }
 
+  /* canvas{
+    width:700px !important;
+    height: 700px !important;
+  } */
   
   body footer {
     background: #18ad3155;
@@ -89,8 +93,8 @@ body {
   }
   
 
-  element.style {
+  /* element.style {
     display: block;
-    height: 821px !important ;
-    width: 1014px !important;
-}
+    height: 20px ;
+    width: 20px ;
+} */

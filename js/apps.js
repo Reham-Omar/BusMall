@@ -17,15 +17,20 @@ var totalClicks = 0;
 var allpro = document.querySelector('#allproduct');
 var leftImageRandom, centerImageRandom, rightImageRandom;
 var testArr = [];
+// Busmall.clickclick=[];
+// Busmall.view=[];
 
 function Busmall(name) {
   this.name = name.split('.')[0];
   this.urlImage = `images/${name}`;
-  busmallobjects.push(this);
+ 
   this.view = 0;
-  this.clickTime = 0
+  this.clickTime = 0;
+  // setItem();
+  busmallobjects.push(this);
+  // Busmall.clickclick.push(this);
+  // Busmall.view.push(this);
 }
-
 
 function pickRandomImages() {
   leftImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
@@ -84,11 +89,15 @@ function clickImage(event) {
     listResult();
     chartResult();
 
+    // ctx.setAttribute( 'width','300px');
+    // ctx.setAttribute( 'height','300px');
+    
   }
 }
 allpro.addEventListener('click', clickImage);
 
 function listResult() {
+  // orders.textContent = "";
 
   var ulEl = document.getElementById('results');
   for (var i = 0; i < busmallobjects.length; i++) {
@@ -97,6 +106,20 @@ function listResult() {
     liEl.textContent = `${busmallobjects[i].name} had ${busmallobjects[i].clickTime}  click  ${busmallobjects[i].view} view`;
   }
 }
+// function setItem(){
+//   var clicks = JSON.stringify(Busmall.clickclick);
+//   localStorage.setItem( 'clicktimes', clicks);
+//   var views = JSON.stringify(Busmall.view);
+//   localStorage.setItem( 'viewstime', views);
+// }
+// function getItem(){
+//   var clicktimes = localStorage.getItem('clicktimes');
+//   Busmall.clickclick = JSON.parse(clicktimes);
+//   var viewstime = localStorage.getItem('viewstime');
+//   Busmall.view = JSON.parse(viewstime);
+//   listResult();
+// }
+var ctx = document.getElementById('myObject');
 
 function chartResult() {
 
@@ -112,7 +135,6 @@ function chartResult() {
     viewsArr.push(viewsnumber);
   }
 
-  var ctx = document.getElementById('myObject').getContext('2d');
 
   var myChart = new Chart(ctx, {
     type: 'bar',
@@ -122,8 +144,8 @@ function chartResult() {
         label: '# of votes',
         data: clickobject,
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
-        borderWidth: 1
+        bclicksColor: 'rgba(255, 99, 132, 1)',
+        bclicksWidth: 1
       },
       {
 
@@ -132,8 +154,8 @@ function chartResult() {
           label: '# of views',
           data: viewsArr,
           backgroundColor: 'rgba(100, 69, 100, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 1
+          bclicksColor: 'rgba(255, 99, 132, 1)',
+          bclicksWidth: 1
 
        } ]
       },
@@ -145,8 +167,63 @@ function chartResult() {
               beginAtZero: true
             }
           }]
-        }
+        },
+        responsive: true,
+            maintainAspectRatio: false,
       }
-  });
-}
+      
+  }
+  
+  );
 
+
+  // ctx.setAttribute( 'width','300px');
+  // ctx.setAttribute( 'height','300px');
+  
+}
+// getItem();
+
+// ctx.setAttribute( 'width','300px');
+// ctx.setAttribute( 'height','300px');
+
+// var ctx = document.getElementById('myObject').getContext('2d');
+// var myChart = new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//         labels: productName,
+//         datasets: [{
+//             label: '# of Votes',
+//             data:clickobject ,
+           
+//             backgroundColor: [
+//                 'rgba(255, 99, 132, 0.2)',
+//                 'rgba(54, 162, 235, 0.2)',
+//                 'rgba(255, 206, 86, 0.2)',
+//                 'rgba(75, 192, 192, 0.2)',
+//                 'rgba(153, 102, 255, 0.2)',
+//                 'rgba(255, 159, 64, 0.2)'
+//             ],
+//             label: '# of viewed',
+//             data:viewsArr ,
+//             bclicksColor: [
+//                 'rgba(255, 99, 132, 1)',
+//                 'rgba(54, 162, 235, 1)',
+//                 'rgba(255, 206, 86, 1)',
+//                 'rgba(75, 192, 192, 1)',
+//                 'rgba(153, 102, 255, 1)',
+//                 'rgba(255, 159, 64, 1)'
+//             ],
+//             bclicksWidth: 1
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             yAxes: [{
+//                 ticks: {
+//                     beginAtZero: true
+//                 }
+//             }]
+//         }
+//     }
+// });
+// }
