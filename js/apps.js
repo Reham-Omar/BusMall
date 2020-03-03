@@ -24,6 +24,7 @@ function Busmall(name) {
   this.clickTime = 0
 }
 
+
 function pickRandomImages() {
   leftImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
   centerImageRandom = busmallobjects[randomNumber(0, busmallobjects.length - 1)];
