@@ -23,24 +23,12 @@ body {
     top: 0;
     z-index: 9999;
   }
-  
-  /* main{
-    max-width: 950px;
-    margin: 40px auto;
-    overflow: hidden;
-  } */
+ 
   
   main > *{
     float:left;
   }
   
-  /* main > :nth-child(odd){
-    width:20%
-  }
-  
-  main > :nth-child(2){
-    width: 50%;
-  } */
   
   main ul, main li {
     padding: 0;
@@ -91,7 +79,14 @@ body {
     padding: 24px 0;
     color: #0e2805;
   }
-  
+  element.style {
+    display: block;
+    width: 501px;
+    height: 501px;
+}
+.chartjs-render-monitor {
+    animation: chartjs-render-animation 1ms;
+}
 
   /* element.style {
     display: block;
