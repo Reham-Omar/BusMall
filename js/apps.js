@@ -149,7 +149,6 @@ function chartResult() {
       },
       {
 
-         
           labels: viewsArr,
           label: '# of views',
           data: viewsArr,
