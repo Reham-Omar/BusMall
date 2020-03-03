@@ -17,8 +17,8 @@ var totalClicks = 0;
 var allpro = document.querySelector('#allproduct');
 var leftImageRandom, centerImageRandom, rightImageRandom;
 var testArr = [];
-Busmall.clickclick=[];
-Busmall.view=[];
+// Busmall.clickclick=[];
+// Busmall.view=[];
 
 function Busmall(name) {
   this.name = name.split('.')[0];
@@ -26,10 +26,9 @@ function Busmall(name) {
  
   this.view = 0;
   this.clickTime = 0;
-  setItem();
   busmallobjects.push(this);
-  Busmall.clickclick.push(this);
-  Busmall.view.push(this);
+  // Busmall.clickclick.push(this);
+  // Busmall.view.push(this);
 }
 
 function pickRandomImages() {
@@ -83,6 +82,8 @@ function clickImage(event) {
   if (event.target.id === "right_img") {
     rightImageRandom.clickTime++;
   }
+  setItem();
+
   if (totalClicks === 25) {
     //remove event listener
     allpro.removeEventListener('click', clickImage);
@@ -93,7 +94,6 @@ function clickImage(event) {
 allpro.addEventListener('click', clickImage);
 
 function listResult() {
-  // orders.textContent = "";
 
   var ulEl = document.getElementById('results');
   for (var i = 0; i < busmallobjects.length; i++) {
@@ -103,19 +103,23 @@ function listResult() {
   }
 }
 function setItem(){
-  var clicks = JSON.stringify(Busmall.clickclick);
-  localStorage.setItem( 'clicktimes', clicks);
-  var views = JSON.stringify(Busmall.view);
-  localStorage.setItem( 'viewstime', views);
+  var setResult = JSON.stringify(busmallobjects);
+  localStorage.setItem( 'result of set', setResult);
+  // var clicks = JSON.stringify(Busmall.clickclick);
+  // localStorage.setItem( 'clicktimes', clicks);
+  // var views = JSON.stringify(Busmall.view);
+  // localStorage.setItem( 'viewstime', views);
 }
 function getItem(){
-  var clicktimes = localStorage.getItem('clicktimes');
-  Busmall.clickclick = JSON.parse(clicktimes);
-  var viewstime = localStorage.getItem('viewstime');
-  Busmall.view = JSON.parse(viewstime);
-  listResult();
+  var getResult = localStorage.getItem('result of set');
+if (getResult){
+  busmallobjects = JSON.parse(getResult);}
+  // var clicktimes = localStorage.getItem('clicktimes');
+  // Busmall.clickclick = JSON.parse(clicktimes);
+  // var viewstime = localStorage.getItem('viewstime');
+  // Busmall.view = JSON.parse(viewstime);
 }
-var ctx = document.getElementById('myObject');
+var ctx = document.getElementById('myObject').getContext('2d');
 
 function chartResult() {
 
