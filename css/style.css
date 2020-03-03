@@ -24,23 +24,23 @@ body {
     z-index: 9999;
   }
   
-  main{
+  /* main{
     max-width: 950px;
     margin: 40px auto;
     overflow: hidden;
-  }
+  } */
   
   main > *{
     float:left;
   }
   
-  main > :nth-child(odd){
+  /* main > :nth-child(odd){
     width:20%
   }
   
   main > :nth-child(2){
     width: 50%;
-  }
+  } */
   
   main ul, main li {
     padding: 0;
@@ -87,15 +87,10 @@ body {
     padding: 24px 0;
     color: #0e2805;
   }
-  section div {
-    padding: 7px;
-    box-sizing: border-box;
-    float: left;
-    
-  }
-  .myObject {
-    padding: 7px;
-    box-sizing: border-box;
-    float: left;
-    width: 50%;
-  }
+  
+
+  element.style {
+    display: block;
+    height: 821px;
+    width: 1014px;
+}
