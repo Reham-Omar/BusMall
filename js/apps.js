@@ -93,6 +93,7 @@ function clickImage(event) {
 }
 allpro.addEventListener('click', clickImage);
 
+
 function listResult() {
 
   var ulEl = document.getElementById('results');
