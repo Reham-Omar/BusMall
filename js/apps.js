@@ -16,6 +16,7 @@ var busmallobjects = [];//an array to store all busmallobjects object
 var totalClicks = 0;
 var allpro = document.querySelector('#allproduct');
 var leftImageRandom ,centerImageRandom ,rightImageRandom;
+
 function Busmall(name) {
   this.name = name;
   this.urlImage = `images/${this.name}`;
@@ -75,6 +76,7 @@ function clickImage(event) {
     //remove event listener
     allpro.removeEventListener('click', clickImage);
     listResult();
+    chartResult();
 
   }
 }
@@ -88,3 +90,40 @@ function listResult(){
   ulEl.appendChild(liEl);
   liEl.textContent = `${busmallobjects[i].name } had ${busmallobjects[i].clickTime }  click  ${busmallobjects[i].view} view`;
 }}
+
+function chartResult(){
+
+  var productName = [];
+  var clickobject = [];
+  for(var i = 0 ; i < busmallobjects.length ; i++){
+    var nameOfProduct = busmallobjects[i].name;
+    productName.push(nameOfProduct);
+    var objectclick = busmallobjects[i].clickTime;
+    clickobject.push(objectclick);
+  }
+
+  var ctx = document.getElementById('myObject').getContext('2d');
+
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: productName ,
+      datasets: [{
+        label: '# of click',
+        data: clickobject,
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+}

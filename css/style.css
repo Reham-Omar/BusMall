@@ -93,3 +93,9 @@ body {
     float: left;
     
   }
+  .myObject {
+    padding: 7px;
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+  }
