@@ -17,8 +17,8 @@ var totalClicks = 0;
 var allpro = document.querySelector('#allproduct');
 var leftImageRandom, centerImageRandom, rightImageRandom;
 var testArr = [];
-// Busmall.clickclick=[];
-// Busmall.view=[];
+Busmall.clickclick=[];
+Busmall.view=[];
 
 function Busmall(name) {
   this.name = name.split('.')[0];
@@ -26,10 +26,10 @@ function Busmall(name) {
  
   this.view = 0;
   this.clickTime = 0;
-  // setItem();
+  setItem();
   busmallobjects.push(this);
-  // Busmall.clickclick.push(this);
-  // Busmall.view.push(this);
+  Busmall.clickclick.push(this);
+  Busmall.view.push(this);
 }
 
 function pickRandomImages() {
@@ -87,11 +87,7 @@ function clickImage(event) {
     //remove event listener
     allpro.removeEventListener('click', clickImage);
     listResult();
-    chartResult();
-
-    // ctx.setAttribute( 'width','300px');
-    // ctx.setAttribute( 'height','300px');
-    
+    chartResult();  
   }
 }
 allpro.addEventListener('click', clickImage);
@@ -106,19 +102,19 @@ function listResult() {
     liEl.textContent = `${busmallobjects[i].name} had ${busmallobjects[i].clickTime}  click  ${busmallobjects[i].view} view`;
   }
 }
-// function setItem(){
-//   var clicks = JSON.stringify(Busmall.clickclick);
-//   localStorage.setItem( 'clicktimes', clicks);
-//   var views = JSON.stringify(Busmall.view);
-//   localStorage.setItem( 'viewstime', views);
-// }
-// function getItem(){
-//   var clicktimes = localStorage.getItem('clicktimes');
-//   Busmall.clickclick = JSON.parse(clicktimes);
-//   var viewstime = localStorage.getItem('viewstime');
-//   Busmall.view = JSON.parse(viewstime);
-//   listResult();
-// }
+function setItem(){
+  var clicks = JSON.stringify(Busmall.clickclick);
+  localStorage.setItem( 'clicktimes', clicks);
+  var views = JSON.stringify(Busmall.view);
+  localStorage.setItem( 'viewstime', views);
+}
+function getItem(){
+  var clicktimes = localStorage.getItem('clicktimes');
+  Busmall.clickclick = JSON.parse(clicktimes);
+  var viewstime = localStorage.getItem('viewstime');
+  Busmall.view = JSON.parse(viewstime);
+  listResult();
+}
 var ctx = document.getElementById('myObject');
 
 function chartResult() {
@@ -175,55 +171,6 @@ function chartResult() {
   }
   
   );
-
-
-  // ctx.setAttribute( 'width','300px');
-  // ctx.setAttribute( 'height','300px');
-  
+   
 }
-// getItem();
-
-// ctx.setAttribute( 'width','300px');
-// ctx.setAttribute( 'height','300px');
-
-// var ctx = document.getElementById('myObject').getContext('2d');
-// var myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: productName,
-//         datasets: [{
-//             label: '# of Votes',
-//             data:clickobject ,
-           
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             label: '# of viewed',
-//             data:viewsArr ,
-//             bclicksColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             bclicksWidth: 1
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             yAxes: [{
-//                 ticks: {
-//                     beginAtZero: true
-//                 }
-//             }]
-//         }
-//     }
-// });
-// }
+getItem();
