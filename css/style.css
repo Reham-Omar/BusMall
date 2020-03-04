@@ -4,16 +4,26 @@ body {
     color: #0e2805;
   }
   h1{
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
     margin: 10px 0;
+    font-family: cursive;
+    color: #654906;
   }
   h2{
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     text-align: center;
-    margin-top: 44px;
+    margin-top: 30px;
+    font-family: monospace;
+    color: #9c9587;
   }
+  p {
+    color: #75736e;
+    font-size: larger;
+    margin-top: 18px;
+    margin-left: 18px;}
+
   header {
     background: #c3f3cb;
     width: 100%;
@@ -24,7 +34,22 @@ body {
     z-index: 9999;
   }
  
-  
+  h3 {
+    font-size: x-large;
+    color: #7f5b5b;
+    text-align: center;
+    margin-top: 57px;
+    font-weight: 700;
+    font-family: cursive;
+    background: antiquewhite;
+    padding: 12px;}
+
+  #results{
+    font-family: cursive;
+    margin-left: 21px;
+    margin-top: 24px;
+    color: #6d796f;
+  }
   main > *{
     float:left;
   }
@@ -79,12 +104,13 @@ body {
     text-align: center;
     padding: 24px 0;
     color: #0e2805;
+    font-family: cursive;
   }
-  element.style {
+  /* element.style {
     display: block;
     width: 501px;
     height: 501px;
-}
+} */
 .chartjs-render-monitor {
     animation: chartjs-render-animation 1ms;
 }
